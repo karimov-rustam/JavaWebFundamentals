@@ -9,15 +9,17 @@ import java.io.IOException;
 /**
  * Created by R.Karimov on 11/4/17.
  */
-@WebServlet(urlPatterns = {"/home", "*.do"},
-initParams = {
+@WebServlet(
+        urlPatterns = {"/home", "*.do"},
+        name = "SimpleServlet",
+        initParams = {
         @WebInitParam(name = "ProductName", value = "Welcome Application")})
 public class SimpleServlet extends HttpServlet {
-    String appName = "My Application";
+    private String appName = "My Application";
 
     @Override
     public void init() throws ServletException {
-        appName = getInitParameter("ProductName");
+        appName = getServletContext().getInitParameter("ProductName");
     }
 
     @Override
