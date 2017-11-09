@@ -1,4 +1,5 @@
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,14 +9,27 @@ import java.io.IOException;
 /**
  * Created by R.Karimov on 11/4/17.
  */
-@WebServlet(urlPatterns = {"/home", "*.do"})
+@WebServlet(urlPatterns = {"/home", "*.do"},
+initParams = {
+        @WebInitParam(name = "ProductName", value = "Welcome Application")})
 public class SimpleServlet extends HttpServlet {
+    String appName = "My Application";
+
+    @Override
+    public void init() throws ServletException {
+        appName = getInitParameter("ProductName");
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         if (name != null) {
-            resp.getWriter().printf("Hello %s", name);
+            resp.setContentType("text/xml");
+            resp.getWriter().printf("<application>" +
+                    "<name>Hello %s</name>" +
+                    "<product>%s</product>" +
+                    "</application>", name, appName);
+
         } else {
             resp.getWriter().write("Please enter a name");
         }
@@ -27,7 +41,7 @@ public class SimpleServlet extends HttpServlet {
         if (name != null && !name.equals("")) {
             resp.getWriter().printf("Hello %s", name);
         } else {
-            resp.getWriter().write("Please enter a name");
+            resp.sendRedirect("index.jsp");
         }
     }
 }
