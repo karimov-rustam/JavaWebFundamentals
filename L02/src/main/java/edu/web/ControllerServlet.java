@@ -11,6 +11,15 @@ import java.io.IOException;
  * Created by R.Karimov on 11/10/17.
  */
 public class ControllerServlet extends HttpServlet {
+
+    @Override
+    public void init() throws ServletException {
+        ApplicationSettings applicationSettings =
+                new ApplicationSettings();
+        applicationSettings.setFormCssClass("blueUser");
+        getServletContext().setAttribute("app", applicationSettings);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
