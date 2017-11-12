@@ -18,8 +18,9 @@ public class ControllerServlet extends HttpServlet {
                 new ApplicationSettings();
 
         CssClass cssClass = new CssClass();
+        String[] tabNames = {"SignIn", "Home", "Profile", "Settings"};
         cssClass.setName("redUser");
-
+        applicationSettings.setTabNames(tabNames);
         applicationSettings.setFormCssClass(cssClass);
         getServletContext().setAttribute("app", applicationSettings);
     }
