@@ -4,13 +4,13 @@ package edu.web;
  * Created by R.Karimov on 11/10/17.
  */
 public class ApplicationSettings {
-    private String _formCssClass;
+    private CssClass _formCssClass;
 
-    public String getFormCssClass() {
+    public CssClass getFormCssClass() {
         return _formCssClass;
     }
 
-    public void setFormCssClass(String value) {
+    public void setFormCssClass(CssClass value) {
         _formCssClass = value;
     }
 }

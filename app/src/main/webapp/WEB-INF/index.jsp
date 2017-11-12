@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= application.getInitParameter("ProductName")%></title>
+    <title>${initParam.ProductName}</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="metro-bootstrap-master/css/metro-bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="app.css" rel="stylesheet" type="text/css"/>
@@ -24,7 +24,7 @@
             <div class="col-md-9">
                 <tabset>
                     <tab heading="Search">
-                        <div class="${app.formCssClass}">
+                        <div class="${app.formCssClass.name}">
                             <h2>Welcome ${user.name}</h2>
                             <form action="home" method="post">
                                 <p>

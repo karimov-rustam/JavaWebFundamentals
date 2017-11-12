@@ -8,11 +8,6 @@
     <artifactId>JavaWebFundamentals</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>L02</module>
-        <module>L02</module>
-        <module>L03</module>
-    </modules>
 
 
 </project>
