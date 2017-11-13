@@ -20,7 +20,6 @@ ${_header}
         <h1>Home</h1>
         <div class="row-fluid">
             <div class="col-md-3">
-                <c:out value="Hello world"/>
                 <%= calendar.getTime().toString()%>
             </div>
             <div class="col-md-9">
@@ -51,8 +50,14 @@ ${_header}
                             </form>
                         </div>
                     </div>
-                    <div class="tab-pane" id="other">
-                        Yet More Static content
+                    <div class="tab-pane" id="profile">
+                        Profile
+                    </div>
+                    <div class="tab-pane" id="messages">
+                        Messages
+                    </div>
+                    <div class="tab-pane" id="settings">
+                        Settings
                     </div>
                 </div>
             </div>
