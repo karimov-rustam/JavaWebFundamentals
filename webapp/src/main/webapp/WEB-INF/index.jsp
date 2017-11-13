@@ -51,8 +51,11 @@ ${_header}
                             </form>
                         </div>
                     </div>
-                    <div class="tab-pane" id="profile">
-                        <st:helloworld/>
+                    <div class="tab-pane active" id="profile">
+                        <st:helloworld name="${user.name}"/>
+                        <c:if test="${!empty user.name}">
+                            <st:profile user="${user}"/>
+                        </c:if>
                     </div>
                     <div class="tab-pane" id="messages">
                         Messages

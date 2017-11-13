@@ -1,2 +1,4 @@
 <%@tag body-content="empty" %>
-<h3>Hello World from tag!</h3>
+<%@ attribute name="name" required="true" %>
+
+<h3>Hello ${name}!</h3>
