@@ -1,6 +1,7 @@
 <%@page isErrorPage="true" %>
 <%@page import="java.util.Calendar" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="st" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +52,7 @@ ${_header}
                         </div>
                     </div>
                     <div class="tab-pane" id="profile">
-                        Profile
+                        <st:helloworld/>
                     </div>
                     <div class="tab-pane" id="messages">
                         Messages

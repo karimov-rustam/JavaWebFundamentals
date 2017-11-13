@@ -4,9 +4,10 @@ package edu.web;
  * Created by R.Karimov on 11/13/17.
  */
 public class Tab {
-    public String name;
 
+    public String name;
     public String url;
+
     Tab(String name, String url) {
         this.name = name;
         this.url = url;
