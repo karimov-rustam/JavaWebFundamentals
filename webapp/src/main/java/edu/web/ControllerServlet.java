@@ -27,7 +27,7 @@ public class ControllerServlet extends HttpServlet {
         tabs.add(new Tab("Home", "#home"));
         tabs.add(new Tab("Profile", "#profile"));
         tabs.add(new Tab("Messages", "#messages"));
-        tabs.add(new Tab("Settings", "#Settings"));
+        tabs.add(new Tab("Settings", "#settings"));
         applicationSettings.setTabs(tabs);
 
         String[] tabNames = {"SignIn", "Home", "Profile", "Settings"};

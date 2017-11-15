@@ -2,6 +2,8 @@
 <%@page import="java.util.Calendar" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="st" tagdir="/WEB-INF/tags" %>
+<%--<%@taglib prefix="m" uri="http://mantiso.com/simple" %>--%>
+<%--<%@taglib prefix="m" tagdir="/WEB-INF/tags" %>--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +33,26 @@ ${_header}
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="home">
+                        <%--TODO: add taglib support--%>
+                        <%--<m:repeat repeat="5">--%>
+                            <%--<m:Simple></m:Simple><br/>--%>
+                        <%--</m:repeat>--%>
+                        <st:priority user="${user}">
+                            <jsp:attribute name="normalPriority">
+                                <li>
+                                    <span>${description}</span>
+                                    <span>${priority}</span>
+                                </li>
+                            </jsp:attribute>
+                            <jsp:attribute name="highPriority">
+                                <li class="highPriority">
+                                    <span>${description}</span>
+                                    <span>${priority}</span>
+                                </li>
+                            </jsp:attribute>
+                    </st:priority>
+                    </div>
+                    <div class="tab-pane" id="signin">
                         <div class="${app["formCssClass"]["name"]}">
                             <c:choose>
                                 <c:when test="${!empty user.name}">
